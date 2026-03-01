@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @import "tailwindcss";
+
+
+@theme {
+  --font-patrick: "Patrick Hand", cursive;
+}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

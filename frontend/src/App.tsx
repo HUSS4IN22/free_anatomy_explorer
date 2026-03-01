@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <div>Anatomy Explorer App</div>
+      <div className="font-patrick text-3xl">Anatomy Explorer App</div>
     </>
   )
 }
