@@ -20,3 +20,4 @@ func main() {
 		e.Logger.Error("failed to start server", "error", err)
 	}
 }
+
