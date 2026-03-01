@@ -1,8 +1,8 @@
-import './App.css'
-
 function App() {
   return (
-    <div>New App - Anatomy Explorer</div>
+    <>
+      <div>Anatomy Explorer App</div>
+    </>
   )
 }
 
