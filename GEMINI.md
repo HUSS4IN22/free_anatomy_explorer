@@ -9,7 +9,7 @@
 # Technical stack:
 - Language/Runtime: React (Vite 8) for frontend, Go (Echo) for backend
 - 3D enginge: React Three Fiber + Drei
-- Styling: Tailwind CSS (this can be useful for the 32 column bento box in the results section)
+- Styling: Tailwind CSS (this can be useful for the 32 column bento box in the results section). The version is V4.
 - Database: PostgreSQL (Metadata + JSONB for layout preferences)
 - Communication: REST (Echo) (may contain different query parameters for search results because the different views can be customizable in the results page)
 
