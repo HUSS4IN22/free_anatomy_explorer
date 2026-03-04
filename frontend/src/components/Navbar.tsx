@@ -4,7 +4,7 @@
 //
 "use client";
 import React from "react";
-import { motion } from "react/motion";
+import { motion } from "motion/react";
 import Link from "next/link";
 import Image from "next/image";
 
