@@ -8,7 +8,7 @@ import { AnimatePresence, motion, useScroll } from "motion/react"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { NavMenu } from "@/components/ui/NavMenu"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { navLinks } from "@/lib/nav-links"
 
 const INITIAL_WIDTH = "70rem"
