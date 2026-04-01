@@ -7,7 +7,7 @@ import { AnimatePresence, motion, useScroll } from "motion/react"
 
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
-import { NavMenu } from "@/components/nav-menu"
+import { NavMenu } from "@/components/ui/NavMenu"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { navLinks } from "@/lib/nav-links"
 
@@ -204,8 +204,8 @@ export function Navbar() {
                             setIsDrawerOpen(false)
                           }}
                           className={`hover:text-primary/80 underline-offset-4 transition-colors ${activeSection === item.href.substring(1)
-                              ? "text-primary font-medium"
-                              : "text-primary/60"
+                            ? "text-primary font-medium"
+                            : "text-primary/60"
                             }`}
                         >
                           {item.name}
