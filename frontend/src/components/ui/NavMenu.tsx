@@ -123,8 +123,8 @@ export function NavMenu() {
           <li
             key={item.id}
             className={`z-10 flex h-full cursor-pointer items-center justify-center px-4 py-2 text-sm font-medium transition-colors duration-200 ${activeSection === item.href.substring(1)
-                ? "text-primary"
-                : "text-primary/60 hover:text-primary"
+              ? "text-primary"
+              : "text-primary/60 hover:text-primary"
               } tracking-tight`}
           >
             <a href={item.href} onClick={(e) => handleClick(e, item)}>

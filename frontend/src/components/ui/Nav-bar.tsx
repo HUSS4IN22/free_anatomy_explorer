@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react"
 import { AnimatePresence, motion, useScroll } from "motion/react"
 
 import { cn } from "@/lib/utils"
-import { Icons } from "@/components/icons"
+// import { Icons } from "@/components/icons"
 import { NavMenu } from "@/components/ui/NavMenu"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { navLinks } from "@/lib/nav-links"
@@ -109,38 +109,38 @@ export function Navbar() {
               : "px-7 shadow-none"
           )}
         >
-          <div className="flex h-[56px] items-center justify-between p-4">
-            <Link href="/" className="flex items-center gap-3">
-              <Icons.logo className="-mt-1 size-4 md:size-6" />
-              <p className="text-primary ml-1 text-lg font-semibold">
-                EldoraUI
-              </p>
-            </Link>
-
-            <NavMenu />
-
-            <div className="flex shrink-0 flex-row items-center gap-1 md:gap-3">
-              <div className="flex items-center space-x-6">
-                <Link
-                  className="text-primary-foreground dark:text-cyan-500-foreground hidden h-8 w-fit items-center justify-center rounded-full border border-white/[0.12] bg-cyan-500 px-4 text-sm font-normal tracking-wide shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] md:flex"
-                  href="#"
-                >
-                  Try for free
-                </Link>
-              </div>
-              <ThemeToggle />
-              <button
-                className="border-border flex size-8 cursor-pointer items-center justify-center rounded-md border md:hidden"
-                onClick={toggleDrawer}
-              >
-                {isDrawerOpen ? (
-                  <X className="size-5" />
-                ) : (
-                  <Menu className="size-5" />
-                )}
-              </button>
-            </div>
-          </div>
+          {/* <div className="flex h-[56px] items-center justify-between p-4"> */}
+          {/*   <Link href="/" className="flex items-center gap-3"> */}
+          {/*     <Icons.logo className="-mt-1 size-4 md:size-6" /> */}
+          {/*     <p className="text-primary ml-1 text-lg font-semibold"> */}
+          {/*       EldoraUI */}
+          {/*     </p> */}
+          {/*   </Link> */}
+          {/**/}
+          {/*   <NavMenu /> */}
+          {/**/}
+          {/*   <div className="flex shrink-0 flex-row items-center gap-1 md:gap-3"> */}
+          {/*     <div className="flex items-center space-x-6"> */}
+          {/*       <Link */}
+          {/*         className="text-primary-foreground dark:text-cyan-500-foreground hidden h-8 w-fit items-center justify-center rounded-full border border-white/[0.12] bg-cyan-500 px-4 text-sm font-normal tracking-wide shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] md:flex" */}
+          {/*         href="#" */}
+          {/*       > */}
+          {/*         Try for free */}
+          {/*       </Link> */}
+          {/*     </div> */}
+          {/*     <ThemeToggle /> */}
+          {/*     <button */}
+          {/*       className="border-border flex size-8 cursor-pointer items-center justify-center rounded-md border md:hidden" */}
+          {/*       onClick={toggleDrawer} */}
+          {/*     > */}
+          {/*       {isDrawerOpen ? ( */}
+          {/*         <X className="size-5" /> */}
+          {/*       ) : ( */}
+          {/*         <Menu className="size-5" /> */}
+          {/*       )} */}
+          {/*     </button> */}
+          {/*   </div> */}
+          {/* </div> */}
         </div>
       </motion.div>
 
@@ -168,12 +168,12 @@ export function Navbar() {
               {/* Mobile menu content */}
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
-                  <Link href="/" className="flex items-center gap-3">
-                    <Icons.logo className="size-7 md:size-10" />
-                    <p className="text-primary text-lg font-semibold">
-                      SkyAgent
-                    </p>
-                  </Link>
+                  {/* <Link href="/" className="flex items-center gap-3"> */}
+                  {/*   <Icons.logo className="size-7 md:size-10" /> */}
+                  {/*   <p className="text-primary text-lg font-semibold"> */}
+                  {/*     SkyAgent */}
+                  {/*   </p> */}
+                  {/* </Link> */}
                   <button
                     onClick={toggleDrawer}
                     className="border-border cursor-pointer rounded-md border p-1"
