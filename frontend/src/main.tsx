@@ -13,6 +13,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
   },
+  {
+    path: "/secondpage",
+    element: <div>Second Page!</div>
+  }
 ])
 
 createRoot(document.getElementById('root')!).render(
