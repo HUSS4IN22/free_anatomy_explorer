@@ -10,7 +10,6 @@ import { Icons } from "@/components/icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { Search01Icon } from "@hugeicons/core-free-icons"
 import { NavMenu } from "@/components/ui/NavMenu"
-// import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { navLinks } from "@/lib/nav-links"
 
 const INITIAL_WIDTH = "70rem"
