@@ -7,6 +7,8 @@ import { AnimatePresence, motion, useScroll } from "motion/react"
 
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { Search01Icon } from "@hugeicons/core-free-icons"
 import { NavMenu } from "@/components/ui/NavMenu"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { navLinks } from "@/lib/nav-links"
@@ -112,6 +114,7 @@ export function Navbar() {
           <div className="flex h-14 items-center justify-between p-4">
             <Link to="/" className="flex items-center gap-3">
               <Icons.logo className="-mt-1 size-4 md:size-6" />
+              <HugeiconsIcon icon={Search01Icon} />
               <p className="text-primary ml-1 text-lg font-semibold">
                 EldoraUI
               </p>
