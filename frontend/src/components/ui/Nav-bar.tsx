@@ -10,7 +10,7 @@ import { Icons } from "@/components/icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { Search01Icon } from "@hugeicons/core-free-icons"
 import { NavMenu } from "@/components/ui/NavMenu"
-import { ThemeToggle } from "@/components/ui/theme-toggle"
+// import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { navLinks } from "@/lib/nav-links"
 
 const INITIAL_WIDTH = "70rem"
@@ -131,7 +131,7 @@ export function Navbar() {
                   Try for free
                 </Link>
               </div>
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
               <button
                 className="border-border flex size-8 cursor-pointer items-center justify-center rounded-md border md:hidden"
                 onClick={toggleDrawer}
