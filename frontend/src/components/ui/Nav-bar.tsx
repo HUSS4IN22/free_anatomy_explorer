@@ -12,8 +12,8 @@ import { Search01Icon } from "@hugeicons/core-free-icons"
 import { NavMenu } from "@/components/ui/NavMenu"
 import { navLinks } from "@/lib/nav-links"
 
-const INITIAL_WIDTH = "70rem"
-const MAX_WIDTH = "800px"
+const INITIAL_MAX_WIDTH = "1120px" // 70rem
+const SCROLLED_MAX_WIDTH = "800px"
 
 // Animation variants
 const overlayVariants = {
@@ -93,20 +93,21 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky z-50 mx-4 flex justify-center transition-all duration-300 md:mx-0",
-        hasScrolled ? "top-6" : "top-4 mx-0"
+        "sticky z-50 flex justify-center transition-all duration-300",
+        hasScrolled ? "top-6 mx-4" : "top-0 mx-0"
       )}
     >
       <motion.div
-        initial={{ width: INITIAL_WIDTH }}
-        animate={{ width: hasScrolled ? MAX_WIDTH : INITIAL_WIDTH }}
+        className="w-full"
+        initial={{ maxWidth: INITIAL_MAX_WIDTH }}
+        animate={{ maxWidth: hasScrolled ? SCROLLED_MAX_WIDTH : INITIAL_MAX_WIDTH }}
         transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <div
           className={cn(
-            "mx-auto max-w-7xl rounded-2xl transition-all duration-300 xl:px-0",
+            "mx-auto w-full transition-all duration-300",
             hasScrolled
-              ? "border-border bg-background/75 border px-2 backdrop-blur-lg"
+              ? "border-border bg-background/75 rounded-2xl border px-2 backdrop-blur-lg shadow-sm"
               : "px-7 shadow-none"
           )}
         >
