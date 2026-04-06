@@ -137,9 +137,9 @@ export function Navbar() {
                 onClick={toggleDrawer}
               >
                 {isDrawerOpen ? (
-                  <X className="size-5" />
+                  <X className="text-primary size-5" strokeWidth={2.5} />
                 ) : (
-                  <Menu className="size-5" />
+                  <Menu className="text-primary size-5" strokeWidth={2.5} />
                 )}
               </button>
             </div>
