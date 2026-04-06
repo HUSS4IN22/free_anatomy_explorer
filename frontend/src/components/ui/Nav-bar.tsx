@@ -11,7 +11,6 @@ import { HugeiconsIcon } from "@hugeicons/react"
 import { Search01Icon } from "@hugeicons/core-free-icons"
 import { NavMenu } from "@/components/ui/NavMenu"
 import { navLinks } from "@/lib/nav-links"
-import { Button } from "@/components/ui/button"
 
 const INITIAL_MAX_WIDTH = "1120px" // 70rem
 const SCROLLED_MAX_WIDTH = "800px"
@@ -94,8 +93,8 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 flex w-full max-w-[100vw] justify-center transition-all duration-300",
-        hasScrolled ? "pt-6 px-4" : "pt-0 px-0"
+        "sticky z-50 flex justify-center transition-all duration-300",
+        hasScrolled ? "top-6 mx-4" : "top-0 mx-0"
       )}
     >
       <motion.div
@@ -109,11 +108,11 @@ export function Navbar() {
             "mx-auto w-full transition-all duration-300",
             hasScrolled
               ? "border-border bg-background/75 rounded-2xl border px-2 backdrop-blur-lg shadow-sm"
-              : "px-4 sm:px-7 shadow-none"
+              : "px-7 shadow-none"
           )}
         >
-          <div className="flex min-h-[3.5rem] flex-col items-center gap-4 p-4 py-3 sm:flex-row sm:justify-between sm:gap-0 sm:py-0">
-            <Link to="/" className="flex w-full items-center justify-center gap-3 sm:w-auto sm:justify-start">
+          <div className="flex h-14 items-center justify-between p-4">
+            <Link to="/" className="flex items-center gap-3">
               <Icons.logo className="-mt-1 size-4 md:size-6" />
               <HugeiconsIcon icon={Search01Icon} />
               <p className="text-primary ml-1 text-lg font-semibold">
@@ -133,25 +132,16 @@ export function Navbar() {
                 </Link>
               </div>
               {/* <ThemeToggle /> */}
-              <div className="md:hidden">
-                <Button
-                  variant="ghost"
-                  className="text-primary h-auto px-2 py-1 font-medium sm:hidden"
-                  onClick={toggleDrawer}
-                >
-                  {isDrawerOpen ? "Close Menu" : "Menu"}
-                </Button>
-                <button
-                  className="border-border hidden size-8 cursor-pointer items-center justify-center rounded-md border sm:flex"
-                  onClick={toggleDrawer}
-                >
-                  {isDrawerOpen ? (
-                    <X className="text-primary size-5" strokeWidth={2.5} />
-                  ) : (
-                    <Menu className="text-primary size-5" strokeWidth={2.5} />
-                  )}
-                </button>
-              </div>
+              <button
+                className="border-border flex size-8 cursor-pointer items-center justify-center rounded-md border md:hidden"
+                onClick={toggleDrawer}
+              >
+                {isDrawerOpen ? (
+                  <X className="text-primary size-5" strokeWidth={2.5} />
+                ) : (
+                  <Menu className="text-primary size-5" strokeWidth={2.5} />
+                )}
+              </button>
             </div>
           </div>
         </div>
@@ -172,7 +162,7 @@ export function Navbar() {
             />
 
             <motion.div
-              className="bg-background border-border fixed inset-x-0 bottom-3 z-50 mx-4 w-[calc(100%-2rem)] rounded-xl border p-4 shadow-lg"
+              className="bg-background border-border fixed inset-x-0 bottom-3 mx-auto w-[95%] rounded-xl border p-4 shadow-lg"
               initial="hidden"
               animate="visible"
               exit="exit"
