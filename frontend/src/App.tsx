@@ -1,9 +1,9 @@
-import { Navbar } from '@/components/ui/Nav-bar.tsx'
+import { Button as Button } from "@/components/ui/button"
 
 function App() {
   return (
     <>
-      <Navbar />
+      <Button>Click Me!</Button>
     </>
   )
 }
