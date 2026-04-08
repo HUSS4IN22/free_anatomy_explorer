@@ -11,13 +11,14 @@ import {
 
 export default function Navbar() {
   return <nav>
-    <Link to="/" />
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger></NavigationMenuTrigger>
           <NavigationMenuContent>
-            <NavigationMenuLink></NavigationMenuLink>
+            <NavigationMenuLink>
+              <Link to="/">Home</Link>
+            </NavigationMenuLink>
           </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>
