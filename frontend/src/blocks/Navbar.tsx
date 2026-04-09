@@ -1,4 +1,6 @@
 //restart Nav
+import { HugeiconsIcon } from "@hugeicons/react"
+import { Bone01Icon } from "@hugeicons/core-free-icons";
 import { Link } from "react-router";
 import {
   NavigationMenu,
@@ -12,6 +14,9 @@ import {
 export default function Navbar() {
   return <nav>
     <NavigationMenu>
+      <div>
+        <HugeiconsIcon icon={Bone01Icon} />
+      </div>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger></NavigationMenuTrigger>
