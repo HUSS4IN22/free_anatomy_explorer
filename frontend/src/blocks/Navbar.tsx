@@ -14,12 +14,14 @@ import {
 export default function Navbar() {
   return <nav>
     <NavigationMenu>
-      <div>
-        <HugeiconsIcon icon={Bone01Icon} />
+      <div className="logo">
+        <Link to="/">
+          <HugeiconsIcon icon={Bone01Icon} />
+        </Link>
       </div>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger></NavigationMenuTrigger>
+          <NavigationMenuTrigger>Search</NavigationMenuTrigger>
           <NavigationMenuContent>
             <NavigationMenuLink>
               <Link to="/">Home</Link>
