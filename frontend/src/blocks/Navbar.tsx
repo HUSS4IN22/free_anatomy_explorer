@@ -21,6 +21,17 @@ export default function Navbar() {
             </NavigationMenuLink>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Compare</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <NavigationMenuLink>
+              <Link to="/">Structures</Link>
+            </NavigationMenuLink>
+            <NavigationMenuLink>
+              <Link to="/">Names</Link>
+            </NavigationMenuLink>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   </nav>
