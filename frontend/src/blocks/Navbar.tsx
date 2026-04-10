@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput, InputGroupText, InputGroupTextarea } from "@/components/ui/input-group"
+import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "@/components/ui/input-group"
 
 export default function Navbar() {
   return <nav>
@@ -20,6 +20,12 @@ export default function Navbar() {
           <HugeiconsIcon icon={Bone01Icon} />
         </Link>
       </div>
+      <InputGroup>
+        <InputGroupInput></InputGroupInput>
+        <InputGroupAddon></InputGroupAddon>
+        <InputGroupButton className="hover:cursor-pointer">click
+        </InputGroupButton>
+      </InputGroup>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Search</NavigationMenuTrigger>
