@@ -1,6 +1,6 @@
 //restart Nav
 import { HugeiconsIcon } from "@hugeicons/react"
-import { Bone01Icon, SearchSquareIcon } from "@hugeicons/core-free-icons";
+import { Bone01Icon, SearchSquareIcon, ArrowMoveDownRightIcon } from "@hugeicons/core-free-icons";
 import { Link } from "react-router";
 import {
   NavigationMenu,
@@ -22,8 +22,11 @@ export default function Navbar() {
       </div>
       <InputGroup>
         <InputGroupInput placeholder="Search a body structure"></InputGroupInput>
-        <InputGroupAddon align="inline-end">
+        <InputGroupAddon align="inline-start">
           <InputGroupButton className="hover:cursor-pointer"><HugeiconsIcon icon={SearchSquareIcon} /></InputGroupButton>
+        </InputGroupAddon>
+        <InputGroupAddon align="inline-end">
+          <InputGroupButton className="hover:cursor-pointer">Enter<HugeiconsIcon icon={ArrowMoveDownRightIcon} /></InputGroupButton>
         </InputGroupAddon>
       </InputGroup>
       <NavigationMenuList>
