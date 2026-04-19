@@ -14,9 +14,9 @@ import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between gap-8 px-4 md:px-8">
-        <div className="flex items-center gap-2">
+    <header className="sticky top-4 z-50 mx-auto max-w-[95%] rounded-2xl border border-border/40 bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="flex h-16 items-center justify-between gap-4 px-6">
+        <div className="flex flex-1 items-center justify-start">
           <Link to="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
             <div className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
               <HugeiconsIcon icon={Bone01Icon} size={20} strokeWidth={2} />
@@ -27,7 +27,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="hidden flex-1 max-w-lg md:flex">
+        <div className="hidden flex-[2] max-w-lg md:flex justify-center">
           <InputGroup className="w-full">
             <InputGroupAddon align="inline-start">
               <InputGroupButton variant="ghost" className="size-8 p-0 hover:bg-transparent">
@@ -47,7 +47,7 @@ export default function Navbar() {
           </InputGroup>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-1 items-center justify-end gap-2">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -95,3 +95,4 @@ export default function Navbar() {
     </header>
   )
 }
+
