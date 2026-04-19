@@ -1,6 +1,6 @@
 //restart Nav
 import { HugeiconsIcon } from "@hugeicons/react"
-import { Bone01Icon, SearchCircleIcon, ArrowMoveDownRightIcon } from "@hugeicons/core-free-icons";
+import { Bone01Icon, SearchCircleIcon, ArrowMoveDownRightIcon, GitCompareIcon } from "@hugeicons/core-free-icons";
 import { Link } from "react-router";
 import {
   NavigationMenu,
@@ -66,7 +66,7 @@ export default function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent">Compare</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent"> <HugeiconsIcon icon={GitCompareIcon} size={20} />Compare</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[200px] gap-1 p-2">
                     <li>
