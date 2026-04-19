@@ -36,7 +36,7 @@ export default function Navbar() {
             </InputGroupAddon>
             <InputGroupInput
               placeholder="Search a body structure..."
-              className="text-sm"
+              className="text-sm font-patrick"
             />
             <InputGroupAddon align="inline-end">
               <div className="flex items-center gap-1 rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground select-none">
@@ -51,38 +51,29 @@ export default function Navbar() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent">Explore</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent font-patrick">Explore</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[200px] gap-1 p-2">
+                  <ul className="grid gap-1 p-2 font-patrick">
                     <li>
                       <NavigationMenuLink render={<Link to="/" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground" />}>
                         <div className="text-sm font-medium leading-none">Home</div>
-                        <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
-                          Go back to the dashboard.
-                        </p>
                       </NavigationMenuLink>
                     </li>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent"> <HugeiconsIcon icon={GitCompareIcon} size={20} />Compare</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent font-patrick"> <HugeiconsIcon icon={GitCompareIcon} size={20} />Compare</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[200px] gap-1 p-2">
+                  <ul className="font-patrick grid gap-1 p-2">
                     <li>
                       <NavigationMenuLink render={<Link to="/" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground" />}>
                         <div className="text-sm font-medium leading-none">Structures</div>
-                        <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
-                          Compare two anatomical structures.
-                        </p>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink render={<Link to="/" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground" />}>
                         <div className="text-sm font-medium leading-none">Names</div>
-                        <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
-                          Compare nomenclature systems.
-                        </p>
                       </NavigationMenuLink>
                     </li>
                   </ul>
