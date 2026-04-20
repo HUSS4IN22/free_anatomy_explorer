@@ -11,6 +11,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "@/components/ui/input-group"
+import { Button } from "@/components/ui/button"
 
 export default function Navbar() {
   return (
@@ -27,7 +28,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="hidden flex-[2] max-w-lg md:flex justify-center">
+        <div className="hidden flex-2 max-w-xl md:flex justify-center">
           <InputGroup className="w-full">
             <InputGroupAddon align="inline-start">
               <InputGroupButton variant="ghost" className="size-8 p-0 hover:bg-transparent">
@@ -39,10 +40,10 @@ export default function Navbar() {
               className="text-sm font-patrick"
             />
             <InputGroupAddon align="inline-end">
-              <div className="flex items-center gap-1 rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground select-none">
+              <Button variant="ghost" className="flex items-center gap-1 rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground select-none hover:cursor-pointer">
                 <HugeiconsIcon icon={ArrowMoveDownRightIcon} size={10} />
                 <span>ENTER</span>
-              </div>
+              </Button>
             </InputGroupAddon>
           </InputGroup>
         </div>
