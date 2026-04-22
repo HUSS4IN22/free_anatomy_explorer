@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Navbar() {
   return (
-    <header className="sticky top-4 z-50 mx-auto mt-4 max-w-[95%] rounded-2xl">
+    <header className="fixed top-4 z-50 left-1/2 -translate-x-1/2 w-full max-w-[95%] rounded-2xl bg-background/80 backdrop-blur-lg border border-border">
       <div className="flex h-16 items-center justify-between gap-4 px-6">
         <div className="flex flex-1 items-center justify-start">
           <Link to="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
