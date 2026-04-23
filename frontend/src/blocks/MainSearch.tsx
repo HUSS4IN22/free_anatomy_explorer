@@ -1,19 +1,29 @@
 import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "@/components/ui/input-group"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { SearchCircleIcon } from "@hugeicons/core-free-icons"
 
 export default function MainSearch() {
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center gap-16 px-6 py-12">
-      <div className="text-2xl font-patrick text-center flex flex-col gap-4">
-        <h1>What are we studying today?</h1>
-        <p>Look up a bone, muscle, or structure you want to explore</p>
+    <div className="flex flex-col min-h-[80vh] items-center justify-center gap-16 px-6 py-12">
+      <div className="font-patrick text-center flex flex-col gap-4">
+        <h1 className="text-6xl font-bold">What are we studying today?</h1>
+        <p className="text-2xl text-muted-foreground">Look up a bone, muscle, or structure you want to explore</p>
       </div>
       <div className="w-full max-w-4xl">
-        <InputGroup>
-          <InputGroupAddon align="inline-start">icon</InputGroupAddon>
-          <InputGroupInput placeholder="Search a body structure..." className="text-sm font-patrick" />
-          <InputGroupButton>Enter</InputGroupButton>
+        <InputGroup size="lg" className="border-dashed border-2 bg-input/50">
+          <InputGroupAddon align="inline-start" className="pl-4">
+            <HugeiconsIcon icon={SearchCircleIcon} size={28} className="text-muted-foreground" />
+          </InputGroupAddon>
+          <InputGroupInput
+            placeholder="Search a body structure..."
+            className="text-3xl font-patrick"
+          />
+          <InputGroupButton size="lg" variant="default" className="mr-1 rounded-3xl">
+            Enter
+          </InputGroupButton>
         </InputGroup>
       </div>
     </div>
   )
 }
+
