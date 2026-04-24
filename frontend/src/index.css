@@ -132,6 +132,8 @@
   }
 }
 
+@layer utilities {}
+
 @theme {
   --font-patrick: "Patrick Hand", cursive;
 }
