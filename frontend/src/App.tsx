@@ -4,8 +4,10 @@ import MainSearch from "./blocks/MainSearch"
 function App() {
   return (
     <>
-      <Navbar />
-      <MainSearch />
+      <div className="relative min-h-screen w-full bg-slate-50 bg-dot-grid">
+        <Navbar />
+        <MainSearch />
+      </div>
     </>
   )
 }
