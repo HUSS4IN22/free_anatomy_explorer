@@ -1,5 +1,5 @@
 import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "@/components/ui/input-group"
-import { Button } from "@/components/ui/button"
+// import { Button } from "@/components/ui/button"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { SearchCircleIcon, ArrowMoveDownRightIcon } from "@hugeicons/core-free-icons"
 
@@ -19,10 +19,12 @@ export default function MainSearch() {
             placeholder="Search a body structure..."
             className="text-3xl font-patrick"
           />
-          <InputGroupButton size="lg" variant="ghost" className="mr-1 rounded-3xl px-1.5 py-0.5 font-medium text-muted-foreground select-none hover:cursor-pointer">
-            <HugeiconsIcon icon={ArrowMoveDownRightIcon} size={10} />
-            <span>ENTER</span>
-          </InputGroupButton>
+          <InputGroupAddon align="inline-end">
+            <InputGroupButton size="lg" variant="ghost" className="mr-1 rounded-3xl px-1.5 py-0.5 font-medium text-muted-foreground select-none hover:cursor-pointer hover:bg-transparent hover:text-foreground">
+              <HugeiconsIcon icon={ArrowMoveDownRightIcon} size={10} />
+              <span>ENTER</span>
+            </InputGroupButton>
+          </InputGroupAddon>
         </InputGroup>
       </div>
     </div>
