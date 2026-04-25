@@ -41,8 +41,8 @@ export default function Navbar() {
             />
             <InputGroupAddon align="inline-end">
               <Button variant="ghost" className="flex items-center gap-1 rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground select-none hover:cursor-pointer hover:bg-transparent hover:text-foreground">
-                <HugeiconsIcon icon={ArrowMoveDownRightIcon} size={10} />
                 <span>ENTER</span>
+                <HugeiconsIcon icon={ArrowMoveDownRightIcon} size={10} />
               </Button>
             </InputGroupAddon>
           </InputGroup>

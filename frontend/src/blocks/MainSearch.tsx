@@ -17,12 +17,12 @@ export default function MainSearch() {
           </InputGroupAddon>
           <InputGroupInput
             placeholder="Search a body structure..."
-            className="text-3xl font-patrick"
+            className="text-2xl md:text-2xl font-patrick"
           />
           <InputGroupAddon align="inline-end">
             <InputGroupButton size="lg" variant="ghost" className="mr-1 rounded-3xl px-1.5 py-0.5 font-medium text-muted-foreground select-none hover:cursor-pointer hover:bg-transparent hover:text-foreground">
-              <HugeiconsIcon icon={ArrowMoveDownRightIcon} size={10} />
               <span>ENTER</span>
+              <HugeiconsIcon icon={ArrowMoveDownRightIcon} size={10} />
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
