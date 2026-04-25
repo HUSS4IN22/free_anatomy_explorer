@@ -1,5 +1,6 @@
 import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "@/components/ui/input-group"
 // import { Button } from "@/components/ui/button"
+import { Spinner } from "@/components/ui/spinner"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { SearchCircleIcon, ArrowMoveDownRightIcon } from "@hugeicons/core-free-icons"
 
@@ -23,6 +24,7 @@ export default function MainSearch() {
             <InputGroupButton size="lg" variant="ghost" className="mr-1 rounded-3xl px-1.5 py-0.5 font-medium text-muted-foreground select-none hover:cursor-pointer hover:bg-transparent hover:text-foreground">
               <span>ENTER</span>
               <HugeiconsIcon icon={ArrowMoveDownRightIcon} size={10} />
+              <Spinner className="size-6 hidden" />
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
