@@ -14,14 +14,14 @@ import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "
 import { Button } from "@/components/ui/button"
 import {
   Command,
-  CommandDialog,
+  // CommandDialog,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
   CommandList,
   CommandSeparator,
-  CommandShortcut,
+  // CommandShortcut,
 } from "@/components/ui/command"
 
 export default function Navbar() {
@@ -40,6 +40,27 @@ export default function Navbar() {
         </div>
 
         <div className="hidden flex-2 max-w-xl md:flex justify-center">
+          <Command>
+            <CommandInput placeholder="Search..." />
+            <CommandList>
+              <CommandEmpty>No results found.</CommandEmpty>
+              <CommandGroup heading="bones">
+                <CommandItem>Femur</CommandItem>
+                <CommandItem>Tibia</CommandItem>
+                <CommandItem>Fibula</CommandItem>
+                <CommandItem>Radius</CommandItem>
+                <CommandItem>Ulna</CommandItem>
+              </CommandGroup>
+              <CommandSeparator />
+              <CommandGroup heading="muscles">
+                <CommandItem>Biceps Brachii</CommandItem>
+                <CommandItem>Pectoralis Major</CommandItem>
+                <CommandItem>Lattissmus Dorsi</CommandItem>
+                <CommandItem>Flexor Digitorum Superficialis</CommandItem>
+                <CommandItem>Quadriceps Femoris</CommandItem>
+              </CommandGroup>
+            </CommandList>
+          </Command>
           <InputGroup className="w-full">
             <InputGroupAddon align="inline-start">
               <InputGroupButton variant="ghost" className="size-8 p-0 hover:bg-transparent">
