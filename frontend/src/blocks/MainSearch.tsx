@@ -23,6 +23,27 @@ export default function MainSearch() {
         <p className="text-2xl text-muted-foreground">Look up a bone, muscle, or structure you want to explore</p>
       </div>
       <div className="w-full max-w-4xl">
+        <Command>
+          <CommandInput placeholder="Search..." />
+          <CommandList>
+            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandGroup heading="bones">
+              <CommandItem>Femur</CommandItem>
+              <CommandItem>Tibia</CommandItem>
+              <CommandItem>Fibula</CommandItem>
+              <CommandItem>Radius</CommandItem>
+              <CommandItem>Ulna</CommandItem>
+            </CommandGroup>
+            <CommandSeparator />
+            <CommandGroup heading="muscles">
+              <CommandItem>Biceps Brachii</CommandItem>
+              <CommandItem>Pectoralis Major</CommandItem>
+              <CommandItem>Lattissmus Dorsi</CommandItem>
+              <CommandItem>Flexor Digitorum Superficialis</CommandItem>
+              <CommandItem>Quadriceps Femoris</CommandItem>
+            </CommandGroup>
+          </CommandList>
+        </Command>
         <InputGroup size="lg" className="border-dashed border-2 bg-input/50">
           <InputGroupAddon align="inline-start" className="pl-4">
             <HugeiconsIcon icon={SearchCircleIcon} size={28} className="text-muted-foreground" />
