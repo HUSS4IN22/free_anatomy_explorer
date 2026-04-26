@@ -3,6 +3,17 @@ import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "
 import { Spinner } from "@/components/ui/spinner"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { SearchCircleIcon, ArrowMoveDownRightIcon } from "@hugeicons/core-free-icons"
+import {
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/components/ui/command"
 
 export default function MainSearch() {
   return (
