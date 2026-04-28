@@ -1,5 +1,6 @@
 import Navbar from "./blocks/Navbar"
 import MainSearch from "./blocks/MainSearch"
+import RecentSearches from "./blocks/RecentSearches"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       />
       <Navbar />
       <MainSearch />
+      <RecentSearches />
     </div>
   )
 }
