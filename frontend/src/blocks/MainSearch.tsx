@@ -5,14 +5,14 @@ import { HugeiconsIcon } from "@hugeicons/react"
 import { SearchCircleIcon, ArrowMoveDownRightIcon } from "@hugeicons/core-free-icons"
 import {
   Command,
-  CommandDialog,
+  // CommandDialog,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
   CommandList,
   CommandSeparator,
-  CommandShortcut,
+  // CommandShortcut,
 } from "@/components/ui/command"
 
 export default function MainSearch() {
