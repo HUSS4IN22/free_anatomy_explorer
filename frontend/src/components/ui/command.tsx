@@ -24,7 +24,7 @@ function Command({
     <CommandPrimitive
       data-slot="command"
       className={cn(
-        "flex size-full flex-col overflow-hidden rounded-4xl text-popover-foreground font-patrick",
+        "flex size-full flex-col overflow-hidden rounded-4xl bg-transparent p-1 text-popover-foreground font-patrick",
         className
       )}
       {...props}
@@ -97,6 +97,7 @@ function CommandList({
       data-slot="command-list"
       className={cn(
         "no-scrollbar max-h-72 scroll-py-1 overflow-x-hidden overflow-y-auto outline-none",
+        "mt-2 rounded-2xl border border-slate-200 bg-white shadow-xl",
         className
       )}
       {...props}
