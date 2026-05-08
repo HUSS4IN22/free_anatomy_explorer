@@ -6,12 +6,12 @@ import { SearchCircleIcon, ArrowMoveDownRightIcon } from "@hugeicons/core-free-i
 import {
   Command,
   // CommandDialog,
-  CommandEmpty,
-  CommandGroup,
+  // CommandEmpty,
+  // CommandGroup,
   CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
+  // CommandItem,
+  // CommandList,
+  // CommandSeparator,
   // CommandShortcut,
 } from "@/components/ui/command"
 
@@ -25,41 +25,41 @@ export default function MainSearch() {
       <div className="w-full max-w-4xl">
         <Command>
           <CommandInput placeholder="Search..." />
-          <CommandList>
-            <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup heading="bones">
-              <CommandItem>Femur</CommandItem>
-              <CommandItem>Tibia</CommandItem>
-              <CommandItem>Fibula</CommandItem>
-              <CommandItem>Radius</CommandItem>
-              <CommandItem>Ulna</CommandItem>
-            </CommandGroup>
-            <CommandSeparator />
-            <CommandGroup heading="muscles">
-              <CommandItem>Biceps Brachii</CommandItem>
-              <CommandItem>Pectoralis Major</CommandItem>
-              <CommandItem>Lattissmus Dorsi</CommandItem>
-              <CommandItem>Flexor Digitorum Superficialis</CommandItem>
-              <CommandItem>Quadriceps Femoris</CommandItem>
-            </CommandGroup>
-          </CommandList>
+          {/* <CommandList> */}
+          {/*   <CommandEmpty>No results found.</CommandEmpty> */}
+          {/*   <CommandGroup heading="bones"> */}
+          {/*     <CommandItem>Femur</CommandItem> */}
+          {/*     <CommandItem>Tibia</CommandItem> */}
+          {/*     <CommandItem>Fibula</CommandItem> */}
+          {/*     <CommandItem>Radius</CommandItem> */}
+          {/*     <CommandItem>Ulna</CommandItem> */}
+          {/*   </CommandGroup> */}
+          {/*   <CommandSeparator /> */}
+          {/*   <CommandGroup heading="muscles"> */}
+          {/*     <CommandItem>Biceps Brachii</CommandItem> */}
+          {/*     <CommandItem>Pectoralis Major</CommandItem> */}
+          {/*     <CommandItem>Lattissmus Dorsi</CommandItem> */}
+          {/*     <CommandItem>Flexor Digitorum Superficialis</CommandItem> */}
+          {/*     <CommandItem>Quadriceps Femoris</CommandItem> */}
+          {/*   </CommandGroup> */}
+          {/* </CommandList> */}
         </Command>
-        <InputGroup size="lg" className="border-dashed border-2 bg-input/50">
-          <InputGroupAddon align="inline-start" className="pl-4">
-            <HugeiconsIcon icon={SearchCircleIcon} size={28} className="text-muted-foreground" />
-          </InputGroupAddon>
-          <InputGroupInput
-            placeholder="Search a body structure..."
-            className="text-2xl md:text-2xl font-patrick"
-          />
-          <InputGroupAddon align="inline-end">
-            <InputGroupButton size="lg" variant="ghost" className="mr-1 rounded-3xl px-1.5 py-0.5 font-medium text-muted-foreground select-none hover:cursor-pointer hover:bg-transparent hover:text-foreground">
-              <span>ENTER</span>
-              <HugeiconsIcon icon={ArrowMoveDownRightIcon} size={10} />
-              <Spinner className="size-6 hidden" />
-            </InputGroupButton>
-          </InputGroupAddon>
-        </InputGroup>
+        {/* <InputGroup size="lg" className="border-dashed border-2 bg-input/50"> */}
+        {/*   <InputGroupAddon align="inline-start" className="pl-4"> */}
+        {/*     <HugeiconsIcon icon={SearchCircleIcon} size={28} className="text-muted-foreground" /> */}
+        {/*   </InputGroupAddon> */}
+        {/*   <InputGroupInput */}
+        {/*     placeholder="Search a body structure..." */}
+        {/*     className="text-2xl md:text-2xl font-patrick" */}
+        {/*   /> */}
+        {/*   <InputGroupAddon align="inline-end"> */}
+        {/*     <InputGroupButton size="lg" variant="ghost" className="mr-1 rounded-3xl px-1.5 py-0.5 font-medium text-muted-foreground select-none hover:cursor-pointer hover:bg-transparent hover:text-foreground"> */}
+        {/*       <span>ENTER</span> */}
+        {/*       <HugeiconsIcon icon={ArrowMoveDownRightIcon} size={10} /> */}
+        {/*       <Spinner className="size-6 hidden" /> */}
+        {/*     </InputGroupButton> */}
+        {/*   </InputGroupAddon> */}
+        {/* </InputGroup> */}
       </div>
     </div>
   )
