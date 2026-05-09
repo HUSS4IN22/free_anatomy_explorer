@@ -17,12 +17,12 @@ import {
 
 export default function MainSearch() {
   return (
-    <div className="flex flex-col min-h-[80vh] items-center justify-center gap-16 px-6 py-12">
-      <div className="font-patrick text-center flex flex-col gap-4">
+    <div className="flex flex-col items-center justify-center gap-12 w-full max-w-4xl">
+      <div className="font-patrick text-center flex flex-col gap-2">
         <h1 className="text-6xl font-bold">What are we studying today?</h1>
         <p className="text-2xl text-muted-foreground">Look up a bone, muscle, or structure you want to explore</p>
       </div>
-      <div className="w-full max-w-4xl">
+      <div className="w-full">
         <Command>
           <CommandInput placeholder="Search..." />
           {/* <CommandList> */}
