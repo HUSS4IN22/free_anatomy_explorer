@@ -10,7 +10,19 @@ import {
 
 export default function RecentSearches() {
   return (
-    <div>
+    <div className="flex gap-4 max-w-4xl">
+      <Item>
+        <ItemMedia>
+          Something
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Title</ItemTitle>
+          <ItemDescription>Description</ItemDescription>
+        </ItemContent>
+        <ItemActions>
+          <Button>Press</Button>
+        </ItemActions>
+      </Item>
       <Item>
         <ItemMedia>
           Something
