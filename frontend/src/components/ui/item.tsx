@@ -40,7 +40,7 @@ const itemVariants = cva(
     variants: {
       variant: {
         default:
-          "border-foreground bg-card shadow-[4px_4px_0px_0px_var(--color-foreground)] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_0px_var(--color-foreground)] active:translate-y-0 active:translate-x-0 active:shadow-none",
+          "border-foreground bg-card shadow-[-0.25px_-0.25px_0px_0px_var(--color-foreground),4px_4px_0px_0px_var(--color-foreground)] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_0px_var(--color-foreground)] active:translate-y-0 active:translate-x-0 active:shadow-none",
         outline: "border-border",
         muted: "border-transparent bg-muted/50",
       },
