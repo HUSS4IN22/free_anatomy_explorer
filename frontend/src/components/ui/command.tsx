@@ -71,12 +71,22 @@ function CommandInput({
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.Input>) {
   return (
-    <div data-slot="command-input-wrapper" className="">
-      <InputGroup className="h-16 bg-input/50 rounded-4xl outline-dashed outline-2 outline-secondary-foreground/20 focus-within:outline-solid focus-within:outline-primary/30 focus-within:bg-input/60">
+    <div data-slot="command-input-wrapper">
+      <InputGroup
+        size="lg"
+        className={cn(
+          "bg-input/50 rounded-4xl outline-dashed outline-2 outline-secondary-foreground/20 transition-all",
+          /* The focus logic from your snippet */
+          "has-[[data-slot=input-group-control]:focus-visible]:border-ring",
+          "has-[[data-slot=input-group-control]:focus-visible]:ring-[3px]",
+          "has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50"
+        )}
+      >
         <CommandPrimitive.Input
-          data-slot="command-input"
+          /* This tag triggers the parent's 'has' selector */
+          data-slot="input-group-control"
           className={cn(
-            "w-full disabled:cursor-not-allowed disabled:opacity-50 text-2xl outline-none focus:ring-0",
+            "w-full outline-none focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50 text-2xl bg-transparent",
             className
           )}
           {...props}
@@ -85,12 +95,41 @@ function CommandInput({
           <HugeiconsIcon icon={SearchIcon} strokeWidth={2} className="size-4 shrink-0 opacity-50" />
         </InputGroupAddon>
         <InputGroupAddon align="inline-end">
-          <InputGroupButton><span className="text-lg">ENTER</span><HugeiconsIcon icon={ArrowMoveDownRightIcon} /></InputGroupButton>
+          <InputGroupButton>
+            <span className="text-lg">ENTER</span>
+            <HugeiconsIcon icon={ArrowMoveDownRightIcon} />
+          </InputGroupButton>
         </InputGroupAddon>
       </InputGroup>
     </div>
   )
 }
+
+// function CommandInput({
+//   className,
+//   ...props
+// }: React.ComponentProps<typeof CommandPrimitive.Input>) {
+//   return (
+//     <div data-slot="command-input-wrapper" className="">
+//       <InputGroup className="h-16 bg-input/50 rounded-4xl outline-dashed outline-2 outline-secondary-foreground/20 focus-within:outline-solid focus-within:outline-primary/30 focus-within:bg-input/60">
+//         <CommandPrimitive.Input
+//           data-slot="command-input"
+//           className={cn(
+//             "w-full disabled:cursor-not-allowed disabled:opacity-50 text-2xl outline-none focus:ring-0",
+//             className
+//           )}
+//           {...props}
+//         />
+//         <InputGroupAddon>
+//           <HugeiconsIcon icon={SearchIcon} strokeWidth={2} className="size-4 shrink-0 opacity-50" />
+//         </InputGroupAddon>
+//         <InputGroupAddon align="inline-end">
+//           <InputGroupButton><span className="text-lg">ENTER</span><HugeiconsIcon icon={ArrowMoveDownRightIcon} /></InputGroupButton>
+//         </InputGroupAddon>
+//       </InputGroup>
+//     </div>
+//   )
+// }
 
 function CommandList({
   className,
