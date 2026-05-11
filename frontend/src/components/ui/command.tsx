@@ -85,7 +85,7 @@ function CommandInput({
           <HugeiconsIcon icon={SearchIcon} strokeWidth={2} className="size-4 shrink-0 opacity-50" />
         </InputGroupAddon>
         <InputGroupAddon align="inline-end">
-          <InputGroupButton><span>ENTER</span><HugeiconsIcon icon={ArrowMoveDownRightIcon} /></InputGroupButton>
+          <InputGroupButton><span className="text-lg">ENTER</span><HugeiconsIcon icon={ArrowMoveDownRightIcon} /></InputGroupButton>
         </InputGroupAddon>
       </InputGroup>
     </div>
