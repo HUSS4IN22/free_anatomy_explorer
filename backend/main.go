@@ -7,7 +7,6 @@ import (
 	"github.com/labstack/echo/v5/middleware"
 )
 
-
 func main() {
 	e := echo.New()
 	e.Use(middleware.RequestLogger())
@@ -20,4 +19,3 @@ func main() {
 		e.Logger.Error("failed to start server", "error", err)
 	}
 }
-
