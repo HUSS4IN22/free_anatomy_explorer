@@ -21,7 +21,7 @@ const secondSlice = createSlice({
   initialState: { isActive: false },
   reducers: {
     toggleActive(state) {
-      !state.isActive
+      state.isActive = !state.isActive
     }
   }
 })

@@ -17,6 +17,8 @@ import { searchStructures } from "@/lib/api"
 import { useNavigate } from "react-router"
 import { anatomicalStructures, StructureCategory } from "@/lib/anatomy-data"
 
+import { saveToHistory } from "@/lib/history"
+
 export default function MainSearch() {
   const navigate = useNavigate()
   const [query, setQuery] = useState("")
@@ -69,7 +71,10 @@ export default function MainSearch() {
                     {structures.map((structure) => (
                       <CommandItem 
                         key={structure.id}
-                        onSelect={() => navigate(`/structure/${structure.id}`)}
+                        onSelect={() => {
+                          saveToHistory(structure.id);
+                          navigate(`/structure/${structure.id}`);
+                        }}
                       >
                         {structure.name}
                       </CommandItem>

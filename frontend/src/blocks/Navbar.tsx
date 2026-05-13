@@ -28,9 +28,7 @@ import { anatomicalStructures, StructureCategory } from "@/lib/anatomy-data";
 
 import { useNavigate } from "react-router";
 
-import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { searchStructures } from "@/lib/api";
+import { saveToHistory } from "@/lib/history";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -93,9 +91,10 @@ export default function Navbar() {
                   <React.Fragment key={category}>
                     <CommandGroup heading={category + "s"}>
                       {structures.map((structure) => (
-                        <CommandItem 
+                        <CommandItem
                           key={structure.id}
                           onSelect={() => {
+                            saveToHistory(structure.id);
                             navigate(`/structure/${structure.id}`);
                             setQuery("");
                           }}

@@ -68,38 +68,54 @@ function CommandDialog({
 
 function CommandInput({
   className,
+  wrapperClassName,
+  size = "lg",
+  startAddon,
+  endAddon,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.Input>) {
+}: React.ComponentProps<typeof CommandPrimitive.Input> & {
+  size?: "default" | "lg"
+  wrapperClassName?: string
+  startAddon?: React.ReactNode
+  endAddon?: React.ReactNode
+}) {
   return (
     <div data-slot="command-input-wrapper">
       <InputGroup
-        size="lg"
+        size={size}
         className={cn(
-          "bg-input/50 rounded-4xl outline-dashed outline-2 outline-secondary-foreground/20 transition-all",
-          /* The focus logic from your snippet */
-          "has-[[data-slot=input-group-control]:focus-visible]:border-ring",
-          "has-[[data-slot=input-group-control]:focus-visible]:ring-[3px]",
-          "has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50"
+          size === "lg" && "bg-input/50 rounded-4xl outline-dashed outline-2 outline-secondary-foreground/20 transition-all",
+          size === "lg" && "has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-[3px] has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50",
+          wrapperClassName
         )}
       >
+        {startAddon || (
+          size === "lg" && (
+            <InputGroupAddon>
+              <HugeiconsIcon icon={SearchIcon} strokeWidth={2} className="size-4 shrink-0 opacity-50" />
+            </InputGroupAddon>
+          )
+        )}
         <CommandPrimitive.Input
           /* This tag triggers the parent's 'has' selector */
           data-slot="input-group-control"
           className={cn(
-            "w-full outline-none focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50 text-2xl bg-transparent",
+            "w-full outline-none focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent",
+            size === "lg" && "text-2xl",
             className
           )}
           {...props}
         />
-        <InputGroupAddon>
-          <HugeiconsIcon icon={SearchIcon} strokeWidth={2} className="size-4 shrink-0 opacity-50" />
-        </InputGroupAddon>
-        <InputGroupAddon align="inline-end">
-          <InputGroupButton>
-            <span className="text-lg">ENTER</span>
-            <HugeiconsIcon icon={ArrowMoveDownRightIcon} />
-          </InputGroupButton>
-        </InputGroupAddon>
+        {endAddon || (
+          size === "lg" && (
+            <InputGroupAddon align="inline-end">
+              <InputGroupButton>
+                <span className="text-lg">ENTER</span>
+                <HugeiconsIcon icon={ArrowMoveDownRightIcon} />
+              </InputGroupButton>
+            </InputGroupAddon>
+          )
+        )}
       </InputGroup>
     </div>
   )
