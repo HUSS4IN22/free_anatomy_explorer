@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "@/components/ui/input-group"
+import { InputGroup, InputGroupAddon, InputGroupButton } from "@/components/ui/input-group"
 import { Button } from "@/components/ui/button"
 import {
   Command,
@@ -24,7 +24,27 @@ import {
   // CommandShortcut,
 } from "@/components/ui/command"
 
+import { anatomicalStructures, StructureCategory } from "@/lib/anatomy-data";
+
+import { useNavigate } from "react-router";
+
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { searchStructures } from "@/lib/api";
+
 export default function Navbar() {
+  const navigate = useNavigate();
+  const [query, setQuery] = useState("");
+  const categories: StructureCategory[] = ["Bone", "Muscle", "Artery", "Vein", "Nerve", "Organ"];
+
+  const { data: searchResults = [] } = useQuery({
+    queryKey: ["search", query],
+    queryFn: () => searchStructures(query),
+    enabled: query.length > 0,
+  });
+
+  const displayStructures = query.length > 0 ? searchResults : anatomicalStructures;
+
   return (
     <header className="fixed top-4 z-50 left-1/2 -translate-x-1/2 w-full max-w-[95%]">
       <div className="flex h-16 items-center justify-between gap-4 px-6">
@@ -40,45 +60,56 @@ export default function Navbar() {
         </div>
 
         <div className="hidden flex-2 max-w-xl md:flex justify-center">
-          {/* TODO: FIX LATER */}
-          {/* <Command> */}
-          {/*   <CommandInput placeholder="Search..." /> */}
-          {/*   <CommandList> */}
-          {/*     <CommandEmpty>No results found.</CommandEmpty> */}
-          {/*     <CommandGroup heading="bones"> */}
-          {/*       <CommandItem>Femur</CommandItem> */}
-          {/*       <CommandItem>Tibia</CommandItem> */}
-          {/*       <CommandItem>Fibula</CommandItem> */}
-          {/*       <CommandItem>Radius</CommandItem> */}
-          {/*       <CommandItem>Ulna</CommandItem> */}
-          {/*     </CommandGroup> */}
-          {/*     <CommandSeparator /> */}
-          {/*     <CommandGroup heading="muscles"> */}
-          {/*       <CommandItem>Biceps Brachii</CommandItem> */}
-          {/*       <CommandItem>Pectoralis Major</CommandItem> */}
-          {/*       <CommandItem>Lattissmus Dorsi</CommandItem> */}
-          {/*       <CommandItem>Flexor Digitorum Superficialis</CommandItem> */}
-          {/*       <CommandItem>Quadriceps Femoris</CommandItem> */}
-          {/*     </CommandGroup> */}
-          {/*   </CommandList> */}
-          {/* </Command> */}
-          <InputGroup className="w-full">
-            <InputGroupAddon align="inline-start">
-              <InputGroupButton variant="ghost" className="size-8 p-0 hover:bg-transparent">
-                <HugeiconsIcon icon={SearchCircleIcon} size={18} className="text-muted-foreground" />
-              </InputGroupButton>
-            </InputGroupAddon>
-            <InputGroupInput
+          <Command className="overflow-visible bg-transparent p-0" shouldFilter={query.length === 0}>
+            <CommandInput
+              size="default"
+              wrapperClassName="w-full"
               placeholder="Search a body structure..."
               className="text-sm font-patrick"
+              value={query}
+              onValueChange={setQuery}
+              startAddon={
+                <InputGroupAddon align="inline-start">
+                  <InputGroupButton variant="ghost" className="size-8 p-0 hover:bg-transparent">
+                    <HugeiconsIcon icon={SearchCircleIcon} size={18} className="text-muted-foreground" />
+                  </InputGroupButton>
+                </InputGroupAddon>
+              }
+              endAddon={
+                <InputGroupAddon align="inline-end">
+                  <Button variant="ghost" className="flex items-center gap-1 rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground select-none hover:cursor-pointer hover:bg-transparent hover:text-foreground">
+                    <span>ENTER</span>
+                    <HugeiconsIcon icon={ArrowMoveDownRightIcon} size={10} />
+                  </Button>
+                </InputGroupAddon>
+              }
             />
-            <InputGroupAddon align="inline-end">
-              <Button variant="ghost" className="flex items-center gap-1 rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground select-none hover:cursor-pointer hover:bg-transparent hover:text-foreground">
-                <span>ENTER</span>
-                <HugeiconsIcon icon={ArrowMoveDownRightIcon} size={10} />
-              </Button>
-            </InputGroupAddon>
-          </InputGroup>
+            <CommandList className="absolute top-full left-0 w-full z-50">
+              <CommandEmpty>No results found.</CommandEmpty>
+              {categories.map((category) => {
+                const structures = displayStructures.filter(s => s.category === category);
+                if (structures.length === 0) return null;
+                return (
+                  <React.Fragment key={category}>
+                    <CommandGroup heading={category + "s"}>
+                      {structures.map((structure) => (
+                        <CommandItem 
+                          key={structure.id}
+                          onSelect={() => {
+                            navigate(`/structure/${structure.id}`);
+                            setQuery("");
+                          }}
+                        >
+                          {structure.name}
+                        </CommandItem>
+                      ))}
+                    </CommandGroup>
+                    <CommandSeparator />
+                  </React.Fragment>
+                );
+              })}
+            </CommandList>
+          </Command>
         </div>
 
         <div className="flex flex-1 items-center justify-end gap-2">
